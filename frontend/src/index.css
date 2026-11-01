@@ -1,0 +1,40 @@
+@import "katex/dist/katex.min.css";
+@import "highlight.js/styles/github-dark.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-navy-950 font-sans text-slate-200 antialiased;
+  background-image:
+    radial-gradient(60rem 30rem at 10% -10%, rgba(56, 189, 248, 0.14), transparent 60%),
+    radial-gradient(50rem 30rem at 95% 0%, rgba(139, 92, 246, 0.14), transparent 60%),
+    radial-gradient(40rem 25rem at 50% 110%, rgba(16, 185, 129, 0.08), transparent 60%);
+  background-attachment: fixed;
+}
+.glass { @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl; }
+
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,.04) 25%, rgba(255,255,255,.10) 50%, rgba(255,255,255,.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .shimmer { animation: none; } }
+
+.md { @apply text-[0.92rem] leading-7 text-slate-300; overflow-wrap: anywhere; }
+.md h1, .md h2, .md h3 { @apply mb-2 mt-5 font-bold text-white; }
+.md h1 { @apply text-lg; } .md h2 { @apply text-base; } .md h3 { @apply text-sm; }
+.md p { @apply my-2; }
+.md ul { @apply my-2 list-disc pl-5; } .md ol { @apply my-2 list-decimal pl-5; }
+.md li { @apply my-1; }
+.md strong { @apply font-semibold text-white; }
+.md a { @apply text-sky-300 underline; }
+.md code { @apply rounded bg-white/10 px-1 py-0.5 font-mono text-[0.82em]; }
+.md pre { @apply my-3 overflow-x-auto rounded-xl border border-white/10 bg-black/40 p-3; }
+.md pre code { @apply bg-transparent p-0; }
+.md table { @apply my-3 block w-full overflow-x-auto text-sm; }
+.md th, .md td { @apply border border-white/10 px-3 py-1.5 text-left; }
+.md th { @apply bg-white/5 text-white; }
+.md blockquote { @apply my-3 border-l-2 border-sky-400/60 pl-3 text-slate-400; }
+.md .katex-display { @apply overflow-x-auto overflow-y-hidden py-1; }
