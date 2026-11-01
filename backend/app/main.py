@@ -18,7 +18,12 @@ app.add_middleware(
 )
 app.include_router(solve.router, prefix="/api/v1")
 
-
+@app.get("/")
+async def root():
+    return {
+        "message": "TriMind Backend is running!",
+        "status": "success"
+    }
 @app.get("/health")
 async def health():
     return {"status": "ok"}
